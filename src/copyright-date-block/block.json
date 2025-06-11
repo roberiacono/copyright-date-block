@@ -20,7 +20,8 @@
 	},
 	"attributes": {
 		"showStartingYear": {
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		"startingYear": {
 			"type": "string"

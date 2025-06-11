@@ -25,7 +25,8 @@ return array(
 		),
 		'attributes' => array(
 			'showStartingYear' => array(
-				'type' => 'boolean'
+				'type' => 'boolean',
+				'default' => true
 			),
 			'startingYear' => array(
 				'type' => 'string'

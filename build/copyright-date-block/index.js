@@ -8,7 +8,7 @@
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/copyright-date-block","version":"0.1.0","title":"Copyright Date Block","category":"widgets","icon":"calendar","description":"Display copyright start year and current year.","example":{},"supports":{"color":{"background":true,"text":true},"html":false,"typography":{"fontSize":true}},"attributes":{"showStartingYear":{"type":"boolean"},"startingYear":{"type":"string"}},"textdomain":"copyright-date-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/copyright-date-block","version":"0.1.0","title":"Copyright Date Block","category":"widgets","icon":"calendar","description":"Display copyright start year and current year.","example":{},"supports":{"color":{"background":true,"text":true},"html":false,"typography":{"fontSize":true}},"attributes":{"showStartingYear":{"type":"boolean","default":true},"startingYear":{"type":"string"}},"textdomain":"copyright-date-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ }),
 
@@ -75,20 +75,26 @@ function Edit({
   const currentYear = new Date().getFullYear().toString();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Settings", "copyright-date-block"),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Display starting year?", "copyright-date-block"),
+          checked: showStartingYear,
+          onChange: value => setAttributes({
+            showStartingYear: value
+          })
+        }), showStartingYear && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Starting year", "copyright-date-block"),
           placeholder: "2000",
           value: startingYear || "",
           onChange: value => setAttributes({
             startingYear: value
           })
-        })
+        })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-      children: ["\xA9 ", startingYear, " - ", currentYear]
+      children: ["\xA9 ", showStartingYear ? `${startingYear} - ` : "", currentYear]
     })]
   });
 }
@@ -197,12 +203,13 @@ function save({
   attributes
 }) {
   const {
+    showStartingYear,
     startingYear
   } = attributes;
   const currentYear = new Date().getFullYear().toString();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save(),
-    children: ["\xA9 ", startingYear, " - ", currentYear]
+    children: ["\xA9 ", showStartingYear ? `${startingYear} - ` : "", currentYear]
   });
 }
 
