@@ -1,5 +1,5 @@
 === Copyright Date Block ===
-Contributors:      The WordPress Contributors
+Contributors:      Roberto Iacono
 Tags:              block
 Tested up to:      6.7
 Stable tag:        0.1.0
@@ -10,10 +10,7 @@ Example block scaffolded with Create Block tool.
 
 == Description ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
-
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+Copyright Date Block to use in block editor. Display start and end date.
 
 == Installation ==
 
