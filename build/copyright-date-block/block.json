@@ -16,7 +16,9 @@
     "html": false,
     "typography": {
       "fontSize": true
-    },
+    }
+  },
+  "attributes": {
     "showStartingYear": {
       "type": "boolean"
     },

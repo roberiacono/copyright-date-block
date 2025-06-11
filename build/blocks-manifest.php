@@ -21,7 +21,9 @@ return array(
 			'html' => false,
 			'typography' => array(
 				'fontSize' => true
-			),
+			)
+		),
+		'attributes' => array(
 			'showStartingYear' => array(
 				'type' => 'boolean'
 			),
