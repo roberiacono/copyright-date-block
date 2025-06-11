@@ -9,7 +9,7 @@ return array(
 		'title' => 'Copyright Date Block',
 		'category' => 'widgets',
 		'icon' => 'calendar',
-		'description' => 'Display copyright start year and actual year.',
+		'description' => 'Display copyright start year and current year.',
 		'example' => array(
 			
 		),
@@ -21,12 +21,17 @@ return array(
 			'html' => false,
 			'typography' => array(
 				'fontSize' => true
+			),
+			'showStartingYear' => array(
+				'type' => 'boolean'
+			),
+			'startingYear' => array(
+				'type' => 'string'
 			)
 		),
 		'textdomain' => 'copyright-date-block',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
+		'style' => 'file:./style-index.css'
 	)
 );

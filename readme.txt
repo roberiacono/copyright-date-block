@@ -10,7 +10,7 @@ Example block scaffolded with Create Block tool.
 
 == Description ==
 
-Copyright Date Block to use in block editor. Display start and end date.
+Copyright Date Block to use in block editor. Display copyright start year and current year.
 
 == Installation ==
 

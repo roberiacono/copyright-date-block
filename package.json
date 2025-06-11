@@ -1,7 +1,7 @@
 {
 	"name": "copyright-date-block",
 	"version": "0.1.0",
-	"description": "Copyright Date Block to use in block editor. Display start and end date.",
+	"description": "Copyright Date Block to use in block editor. Display copyright start year and current year.",
 	"author": "Roberto Iacono",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
