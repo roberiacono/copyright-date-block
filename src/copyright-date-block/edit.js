@@ -30,9 +30,17 @@ import "./editor.scss";
  *
  * @return {Element} Element to render.
  */
+import { useEffect } from "react";
+
 export default function Edit({ attributes, setAttributes }) {
-	const { showStartingYear, startingYear } = attributes;
+	const { fallbackCurrentYear, showStartingYear, startingYear } = attributes;
 	const currentYear = new Date().getFullYear().toString();
+
+	useEffect(() => {
+		if (currentYear !== fallbackCurrentYear)
+			setAttributes({ fallbackCurrentYear: currentYear });
+	}, [fallbackCurrentYear, currentYear]);
+
 	return (
 		<>
 			<InspectorControls>
@@ -54,7 +62,7 @@ export default function Edit({ attributes, setAttributes }) {
 			</InspectorControls>
 			<p {...useBlockProps()}>
 				&copy; {showStartingYear ? `${startingYear} - ` : ""}
-				{currentYear}
+				{fallbackCurrentYear}
 			</p>
 		</>
 	);

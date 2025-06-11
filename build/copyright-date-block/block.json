@@ -19,6 +19,9 @@
     }
   },
   "attributes": {
+    "fallbackCurrentYear": {
+      "type": "string"
+    },
     "showStartingYear": {
       "type": "boolean",
       "default": true

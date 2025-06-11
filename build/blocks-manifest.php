@@ -24,6 +24,9 @@ return array(
 			)
 		),
 		'attributes' => array(
+			'fallbackCurrentYear' => array(
+				'type' => 'string'
+			),
 			'showStartingYear' => array(
 				'type' => 'boolean',
 				'default' => true
